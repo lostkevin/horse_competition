@@ -1,13 +1,18 @@
 [
     {
         "Name": "Kasumi",
+        "Icon": "放Emoji头像的文本",
         "Skill": [
             {
                 "Name": "技能名",
                 "ActionSequence": [
                     {
-                        "Type": "子技能类型, 最后会搞成一个id",
-                        "Configs": ["这是参数列表, 取决于Skill之后的形式"],
+                        "注释:这是子动作, 一个技能可以分解成多个小动作, 例如吃货先猛冲后禁锢自身, 将它分解成位移技能和禁锢技能": "这行在实际json里不加",
+                        "Type": "目前只支持move或buff二选一",
+                        "Configs": {
+                            "Target": ["指定目标, 具体见skills.py内的注释"],
+                            "BuffDetail": ["这个项只在小技能是Buff类时使用, 非BUFF会忽略, 具体见skills.py内的注释"]
+                        }
                     },
                     {
                         "第二个子技能": "格式同上"
